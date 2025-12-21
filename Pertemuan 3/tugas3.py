@@ -32,24 +32,27 @@ else:
     
 
 #Exercise3 konversi suhu
-suhu =float(input("suhu="))
-deg=input("satuan suhu=")
+suhu =float(input("suhu ="))
+deg=input("satuan suhu =")
+konversi=input("mau konversi jadi apa =")
 ctf=suhu*(9/5)+32
 ctk=suhu+273.15
 ftc=(32-suhu)*(5/9)
 ftk=((32-suhu)*(5/9))+273.15
 ktc=suhu-273.15
 ktf=((suhu-273.15)*(9/5))+32
-if(deg=="celcius"):
-    print("suhu in F=",ctf,"F")
-    print("suhu in K=",ctk,"K")
-elif(deg=="fahrenheit"):
-    print("suhu in C=",ftc,"C")
-    print("suhu in K=",ftk,"K")
-elif(deg=="kelvin"):
-    print("suhu in C=",ktc,"C")
-    print("suhu in F=",ktf,"F")
-
+if(deg=="celcius") and (konversi=="fahrenheit"):
+    print("suhu in F =",ctf,"F")
+elif(deg=="celcius") and (konversi=="kelvin"):
+    print("suhu in K =",ctk,"K")
+elif(deg=="fahrenheit") and (konversi=="celcius"):
+    print("suhu in C =",ftc,"C")
+elif(deg=="fahrenheit") and (konversi=="kelvin"):
+    print("suhu in K =",ftk,"K")
+elif(deg=="kelvin") and (konversi=="celcius"):
+    print("suhu in C =",ktc,"C")
+elif(deg=="kelvin") and (konversi=="fahrenheit"):
+    print("suhu in F =",ktf,"F")
 
 #Exercise4 segitiga
 a=float(input("panjang sisi a= "))
