@@ -1,0 +1,73 @@
+class Student:
+    "Common base class for all students"
+    studentCount = 0
+    
+    def __init__(self, name="Student", nilai=None, kelas=None):
+        self.name = name
+        self.nilai = nilai
+        self.kelas = kelas
+        Student.studentCount += 1
+
+    def getName(self):
+        return self.name
+    
+    def getNilai(self):
+        return self.nilai
+        
+    def getKelas(self):
+        return self.kelas
+        
+    def setName(self,name):
+        self.name=name
+    
+    def setNilai(self,nilai):
+        self.nilai=nilai
+        
+    def setKelas(self,kelas):
+        self.kelas=kelas
+        
+def banner ():
+    print ("""===== OOP Program =====
+1. Declare Object
+2. Display Object
+3. Change Object Value
+4. Delete Object
+5. Exit Program""")
+
+student1 = Student()
+
+while (True):
+    banner()
+    menu = int(input("Enter Your Choice (1/2/3/4/5):"))
+    
+    if(menu ==1):
+        name = input("Masukkan Nama:")
+        nilai = int(input("Masukkan Score:"))
+        kelas = int(input("Masukkan Kelas:"))
+
+        student1=Student(name, nilai, kelas)
+    elif (menu==2):
+        name = student1.getName()
+        nilai = student1.getNilai()
+        kelas = student1.getKelas()
+        
+        print("Name:",name)
+        print("Nilai:", nilai)
+        print("Kelas:",kelas)
+    
+    elif (menu==3):
+       change = str(input("What would you to change (Name/Score):"))
+       if (change == "name"):
+           name = input("change name:") 
+           student1.setName(name)
+       elif (change == "score"):
+           score =input ("change score")
+           student1.setNilai(nilai)
+       else:
+           print()
+    elif (menu==4):
+        name = None
+        student1.setName(name)
+        nilai = None
+        student1.setNilai(nilai)
+        print("Sukses Dihapus")
